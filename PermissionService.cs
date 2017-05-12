@@ -55,21 +55,10 @@ namespace Notify.Solution.CodeFirst
             {
                 using (TransactionScope trans = new TransactionScope())
                 {
-                    try
-                    {
-                        repository.AddEntities(u);
-                        repository.AddEntities(r);
-                        repository.AddEntities(ur, true);
-                        trans.Complete();
-                    }
-                    catch (Exception exception)
-                    {
-                        throw new Exception(exception.Message);
-                    }
-                    finally
-                    {
-                        trans.Dispose();
-                    }
+                    repository.AddEntities(u);
+                    repository.AddEntities(r);
+                    repository.AddEntities(ur, true);
+                    trans.Complete();
                 } 
             }
         }
